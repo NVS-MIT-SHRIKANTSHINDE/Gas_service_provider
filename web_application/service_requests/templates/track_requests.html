@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Service Requests</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for table */
+        .table-hover tbody tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        .status-pending {
+            background-color: #f8d7da; /* Red color for pending status */
+        }
+        .status-resolved {
+            background-color: #d4edda; /* Green color for resolved status */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Track Service Requests</h2>
+        {% if service_requests %}
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Request Type</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                        {% comment %} <th>Attachment</th> {% endcomment %}
+                        <th>Submitted At</th>
+                        <th>Resolved At</th>
+                        <th>User Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in service_requests %}
+                        <tr class="{% if request.status == 'Pending' %}status-pending{% else %}status-resolved{% endif %}">
+                            <td>{{ request.request_type }}</td>
+                            <td>{{ request.status }}</td>
+                            <td>{{ request.details }}</td>
+                            <!-- <td><a href="{{ MEDIA_URL }}{{ request.attachment }}">{{ request.attachment }}</a></td> -->
+                            <td>{{ request.submitted_at }}</td>
+                            <td>{{ request.resolved_at }}</td>
+                            <td>{{ request.user_id }}</td> <!-- Assuming UserProfile model has __str__ method defined -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No service requests found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

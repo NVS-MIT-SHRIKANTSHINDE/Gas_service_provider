@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Submission</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for form */
+        form {
+            max-width: 600px; /* Set maximum width for form */
+            margin: auto; /* Center the form horizontally */
+            padding: 20px; /* Add padding around the form */
+            background-color: #f8f9fa; /* Light gray background on hover */
+        }
+        form:hover {
+            background-color: #f8f9fa; /* Light gray background on hover */
+        }
+        .form-group {
+            margin-bottom: 20px; /* Add margin bottom to form groups */
+        }
+        label {
+            font-weight: bold; /* Make labels bold */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%; /* Make input fields full width */
+            padding: 10px; /* Add padding to input fields */
+            border: 1px solid #ccc; /* Add border to input fields */
+            border-radius: 5px; /* Add border radius to input fields */
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+        textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+        button[type="submit"] {
+            margin-top: 20px; /* Add margin to the top of the submit button */
+            width: 100%; /* Make submit button full width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Request Submission</h2>
+        <a href="/track" class="btn btn-secondary">Track Privious Service Requests </a> <!-- Add a button to redirect to /track page -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_request_type">Request Type:</label>
+                {{ form.request_type }}
+            </div>
+            <div class="form-group">
+                <label for="id_details">Details:</label>
+                {{ form.details }}
+            </div>
+            <div class="form-group">
+                <label for="id_attachment">Attachment:</label>
+                {{ form.attachment }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          
+        </form>
+    </div>
+</body>
+</html>

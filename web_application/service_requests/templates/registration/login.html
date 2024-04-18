@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for form */
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-body {
+            background-color: #f8f9fa;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="id_username">Username:</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group">
+                                <label for="id_password">Password:</label>
+                                {{ form.password }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
