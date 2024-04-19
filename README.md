@@ -1,6 +1,6 @@
 
 
-# **Gas Service Provider Web Application#**
+# **Gas Service Provider Web Application**
 
 This Django application revolutionizes customer service for gas utilities. Customers effortlessly submit service requests and monitor progress, while support representatives efficiently manage and resolve them.
 
