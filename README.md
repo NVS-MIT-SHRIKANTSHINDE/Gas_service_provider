@@ -81,12 +81,3 @@ To install and run the Gas Service Provider Web Application, follow these steps:
 ![Screenshot 7](https://github.com/NVS-MIT-SHRIKANTSHINDE/Gas_service_provider/raw/main/web_application/images/Screenshot%202024-04-19%20014638.png)
 ![Screenshot 8](https://github.com/NVS-MIT-SHRIKANTSHINDE/Gas_service_provider/raw/main/web_application/images/Screenshot%202024-04-19%20014704.png)
 
-### Bonus Points
-The Django application codebase is structured following best practices to ensure clarity, modularity, and ease of maintenance. Key considerations include:
-- Modularization of code into reusable components.
-- Clear separation of concerns between models, views, and templates.
-- Consistent naming conventions and coding style.
-- Proper use of Django's built-in features for authentication, form handling, and database management.
-- Documentation and comments to aid understanding and future development.
-
-For any further inquiries or assistance, please refer to the [Gas Service Provider GitHub repository](https://github.com/NVS-MIT-SHRIKANTSHINDE/Gas_service_provider) or contact the project maintainer.
